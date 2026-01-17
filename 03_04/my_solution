@@ -14,7 +14,7 @@ def selection_sort(xs):
         xs[i], xs[min_idx] = xs[min_idx], xs[i]  # Swap
         print(f"Array after {i}th sort = {xs}")
 
-xs = [3, 2, 1, 5, 4, 10, 12, 16, 9, 7, 6, 8, 14, 11, 15, 13, 18, 17, 19, 20, 0]
+xs = [3, 2, 1, 5, 4, 10, 12, 16, 9, 7, 6, 8, 14, 11, 15, 13, 18, 17, 19, 20, 0, -10, -5]
 print(xs)
 selection_sort(xs)
 print(xs)
