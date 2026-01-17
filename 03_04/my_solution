@@ -1,0 +1,24 @@
+def find_min_idx(xs):
+    min_index = 0
+    for i in range(len(xs)):
+        if xs[i] < xs[min_index]:
+            min_index = i
+    return min_index
+
+def selection_sort(xs):
+    if len(xs) == 0: return xs
+
+    print(f"Array before sort = {xs}")
+    for i in range(len(xs)-1):
+        min_idx = find_min_idx(xs[i:]) + i
+        xs[i], xs[min_idx] = xs[min_idx], xs[i]  # Swap
+        print(f"Array after {i}th sort = {xs}")
+
+xs = [3, 2, 1, 5, 4, 10, 12, 16, 9, 7, 6, 8, 14, 11, 15, 13, 18, 17, 19, 20, 0]
+print(xs)
+selection_sort(xs)
+print(xs)
+
+# A nice Pythonic way to check  a list is sorted
+# without relying on using Python's own sorting methods to compare.
+print(all(xs[i] <= xs[i + 1] for i in range(len(xs) - 1)))
