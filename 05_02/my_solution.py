@@ -1,6 +1,6 @@
 import functools as ft
 
-denominations = [200, 100, 50, 20, 10, 5, 2, 1]
+denominations = [200, 100, 50, 20, 10, 5, 4, 2, 1]
 
 @ft.lru_cache(maxsize=None)
 def make_change(target_amount):
@@ -14,6 +14,7 @@ def make_change(target_amount):
                 min_coins = num_coins
     return min_coins
 
+print(make_change(8))  # 3: 4p + 4p
 print(make_change(24))  # 3: 20p + 2p + 2p
 print(make_change(163))  # 5: £1 + 50p + 10p + 2p + 1p
 print(make_change(200))  # 5: £1 + 50p + 10p + 2p + 1p
